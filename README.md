@@ -13,6 +13,7 @@ My DIY Landing Page with these features.
 
 ## Sources
 * [Google Font](https://fonts.google.com/)
+* [Favicon Generator](https://realfavicongenerator.n)
 
 
 ## Why Does This Exist? 
