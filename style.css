@@ -1,7 +1,11 @@
 /* Have fun. This is your site. */
 
 body {
-  background: lightgray;
+  background: tan;
+}
+
+h1 {
+  text-align: center;
 }
 
 /* Main Container */
