@@ -18,3 +18,141 @@ main {
   max-width: 40em;
 
 }
+
+.button-container {
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block; /* Make the button an inline-block */
+  padding: 10px 20px; /* Button padding */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Round corners */
+  color: #fff; /* Text color */
+  position: relative; /* Position for absolute elements */
+  padding-left: 40px; /* Space for logo */
+  justify-content: space-between;
+  width: 150px;
+  height: 50px;
+}
+
+/* GitHub Button */
+.btn.github {
+  position: relative; /* Required for pseudo-element positioning */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn.github::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px; /* Rounded corners if desired */
+  padding: 2px; /* Width of the border */
+  background: linear-gradient(340deg, black, white);
+  background-size: 200% 200%;
+  animation: gradient-border 8s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* LinkedIn Button */
+.btn.linkedin {
+  position: relative; /* Required for pseudo-element positioning */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn.linkedin::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px; /* Rounded corners if desired */
+  padding: 2px; /* Width of the border */
+  background: linear-gradient(115deg, white, #0072b1);
+  background-size: 200% 200%;
+  animation: gradient-border 8s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* CodePen Button */
+.btn.codepen {
+  position: relative; /* Required for pseudo-element positioning */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn.codepen::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px; /* Rounded corners if desired */
+  padding: 2px; /* Width of the border */
+  background: linear-gradient(270deg, white, black);
+  background-size: 200% 200%;
+  animation: gradient-border 8s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: Change text color on hover */
+.btn:hover {
+  color: white; /* Change text color on hover */
+}
+

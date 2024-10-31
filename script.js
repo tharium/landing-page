@@ -22,3 +22,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Error loading JSON:', error);
     }
   });
+
+  document.addEventListener('scroll', () => {
+    const buttons = document.querySelectorAll('.btn.codepen');
+    const scrollPosition = window.scrollY;
+  
+    buttons.forEach((button, index) => {
+      // Adjust the parallax effect factor as needed (e.g., 0.5 for subtle effect)
+      const parallaxFactor = 0.5 + index * 0.1;
+      button.style.transform = `translateY(${scrollPosition * parallaxFactor}px)`;
+    });
+  });
