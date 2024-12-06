@@ -1,7 +1,21 @@
 /* Have fun. This is your site. */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height of the viewport */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #ffffff
+}
+
+h2 {
+  font-family: 'Restora', sans-serif;
+}
+
 body {
-  background: tan;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  background-size: cover;
 }
 
 h1 {
@@ -19,140 +33,100 @@ main {
 
 }
 
+#profile-photo{
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  transform: rotate(-90deg)
+}
+
+#myLinks {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Optional: Add some space between the icon and the text */
+}
+
+.link-content {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  transition: color 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.link-icon {
+  width: 24px; /* Set a fixed size for the icon */
+  height: 24px;
+}
+
+.link-content:hover {
+  color: #007bff; /* Change text color on hover */
+}
+
 .button-container {
   position: fixed;
   top: 5%;
-  right: 2%;
+  right: 95%;
   display: flex;
   flex-direction: column;
   gap: 8px;
   z-index: 1000;
+  border-radius: 1px;
+  border-color: red;
 }
 
-/* Button Styles */
-.btn {
-  display: inline-block; /* Make the button an inline-block */
-  padding: 10px 20px; /* Button padding */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Round corners */
-  color: #fff; /* Text color */
-  position: relative; /* Position for absolute elements */
-  padding-left: 40px; /* Space for logo */
-  justify-content: space-between;
-  width: 150px;
-  height: 50px;
-}
-
-/* GitHub Button */
-.btn.github {
-  position: relative; /* Required for pseudo-element positioning */
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.link-container {
+  position: fixed;
+  top: 5%;
+  left: 5%;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 8px;
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  /* border-color: linear-gradient(135deg, #141e30, #243b55); */
+  animation: borderAnimation 10s ease infinite;
 }
 
-.btn.github::before {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px; /* Rounded corners if desired */
-  padding: 2px; /* Width of the border */
-  background: linear-gradient(340deg, black, white);
-  background-size: 200% 200%;
-  animation: gradient-border 8s ease infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* LinkedIn Button */
-.btn.linkedin {
-  position: relative; /* Required for pseudo-element positioning */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 8px;
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.btn.linkedin::before {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px; /* Rounded corners if desired */
-  padding: 2px; /* Width of the border */
-  background: linear-gradient(115deg, white, #0072b1);
-  background-size: 200% 200%;
-  animation: gradient-border 8s ease infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* CodePen Button */
-.btn.codepen {
-  position: relative; /* Required for pseudo-element positioning */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 8px;
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.btn.codepen::before {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 4px; /* Rounded corners if desired */
-  padding: 2px; /* Width of the border */
-  background: linear-gradient(270deg, white, black);
-  background-size: 200% 200%;
-  animation: gradient-border 8s ease infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-@keyframes gradient-border {
+@keyframes borderAnimation {
   0% {
-    background-position: 0% 50%;
+    border-color: #141e30;
   }
-  50% {
-    background-position: 100% 50%;
+  33% {
+    border-color: #ffffff;
+  }
+  66% {
+    border-color: #243b55;
   }
   100% {
-    background-position: 0% 50%;
+    border-color: #141e30;
   }
 }
 
-/* Optional: Change text color on hover */
-.btn:hover {
-  color: white; /* Change text color on hover */
+#helloText {
+  font-size: 3rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInOut 7s infinite;
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

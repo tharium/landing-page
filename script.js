@@ -11,9 +11,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       const myLinks = document.getElementById('myLinks');
       const fragment = document.createDocumentFragment();
   
-      data.myLinks.forEach(({ url, name }) => {
+      data.myLinks.forEach(({ url, name, icon }) => {
         const li = document.createElement('li');
-        li.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
+        li.className = 'link-item';
+
+        const img = document.createElement('img');
+        img.src = icon;
+        img.alt = `${name} logo`;
+        img.style.width = '24px';
+        img.style.height = '24px';
+        img.className = 'link-icon';
+
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.textContent = name;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.className = 'link-content';
+
+        li.appendChild(img);
+        li.appendChild(anchor);
+
         fragment.appendChild(li);
       });
   
@@ -33,3 +51,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       button.style.transform = `translateY(${scrollPosition * parallaxFactor}px)`;
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const helloText = document.getElementById('helloText');
+    const languages = [
+      { text: "Hola", font: "'Roboto', sans-serif" },
+      { text: "Bonjour", font: "'Lobster', cursive" },
+      { text: "Ciao", font: "'Dancing Script', cursive" },
+      { text: "Hallo", font: "'Playwright', cursive" },
+      { text: "こんにちは", font: "'Yu Gothic', sans-serif" },
+      { text: "안녕하세요", font: "'Nanum Gothic', sans-serif" },
+      { text: "Olá", font: "'Playfair Display', serif" },
+      { text: "Привет", font: "'PT Sans', sans-serif" },
+      { text: "你好", font: "'Microsoft YaHei', sans-serif" }
+    ];
+
+    let index = 0;
+    setInterval(() => {
+        const greeting = languages[index];
+        helloText.innerText = greeting.text;
+
+        //helloText.style.fontFamily = greeting.font;
+        index = (index + 1) % languages.length; // Loop through languages
+    }, 7000); // Change text every 2 seconds
+});

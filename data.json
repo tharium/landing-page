@@ -2,15 +2,18 @@
 "myLinks": [
     {
     "name": "GitHub",
-    "url": "https://github.com/tharium"
+    "url": "https://github.com/tharium",
+    "icon": "./images/githublogo.png"
     },
     {
     "name": "CodePen",
-    "url": "https://codepen.io/tharium"
+    "url": "https://codepen.io/tharium",
+    "icon": "./images/codepenlogo.png"
     },
     {
     "name": "LinkedIn",
-    "url": "https://www.linkedin.com/in/tyler-harris-49455827b/"
+    "url": "https://www.linkedin.com/in/tyler-harris-49455827b",
+    "icon": "./images/linkedinlogo.png"
     }
     ]
 }

@@ -7,12 +7,12 @@
     <title>Tyler Harris</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicons/favicon-48x48.png" sizes="48x48" />
-    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
-    <link rel="shortcut icon" href="/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Web Dev Starter" />
-    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Stylesheets -->
       <!-- Normalize -->
@@ -25,6 +25,9 @@
 
    <!-- JavaScript -->
     <script src="script.js" defer></script> 
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Restora&display=swap" rel="stylesheet">
    
 </head>
 <body>
@@ -33,20 +36,17 @@
 
     <h1>Tyler Harris</h1>
 
-    <img src="83E2BDD4-12FC-4D20-B086-9B01E505AB8C_1_102_o.jpeg" alt="A very handsome guy" width="300" height="500">
+    <img id="profile-photo" src="/favicon/web-app-manifest-512x512.png" alt="A very handsome guy" width="300" height="500">
 
-    <p>I am a senior majoring in Computer Science at Eastern Washington University. My studies have given me a strong foundation in a variety of languages including Java, C/C#, Python and SQL. I am working on improving my web development skills!</p>
+    <h2 id="helloText">Hello</h2>
+    <p>Welcome to my landing page, follow the links to check out what I'm working on!</p>
 
-    <div class="button-container">
-        <a href="https://github.com/tharium" class="btn github" target="_blank">
-            <img src="../images/githublogo.png" alt="Github Logo">GitHub</a>
-        <a href="https://www.linkedin.com/in/tyler-harris-49455827b/" class="btn linkedin" target="_blank"> 
-            <img src="../images/linkedinlogo.png" alt="LinkedIn Logo"> LinkedIn</a>
-        <a href="https://codepen.io/tharium" target="_blank" class="btn codepen">
-            <img src="../images/codepenlogo.png" alt="CodePen Logo" class="btn-icon"> CodePen
-        </a>
+    <h3>About Me</h3>
+    <p>I am a senior majoring in Computer Science at Eastern Washington University. Currently working on improving my web development skills!</p>
+
+    <div class="link-container">
+        <ul class="link-list" id="myLinks"></ul>
     </div>
-
     </main>
     
 </body>
